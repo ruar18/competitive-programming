@@ -1,21 +1,14 @@
-#include <bits/stdc++.h>
-
+#include <cstdio>
 using namespace std;
 
-int main()
-{
-    cin.sync_with_stdio(0);
-    cin.tie(0);
-    unordered_set<int> nums;
-    int n;
-    cin >> n;
-    for(int i = 0; i < n; i++){
-        int number;
-        cin >> number;
-        if(nums.find(number) == nums.end())
-            nums.insert(number);
-        else nums.erase(number);
+
+int main() {
+    int n, cur=0, ans=0;
+    scanf("%d", &n);
+    while(n--){
+        scanf("%d", &cur);
+        ans^=cur;
     }
-    cout << *nums.begin();
+    printf("%d\n", ans);
     return 0;
 }
